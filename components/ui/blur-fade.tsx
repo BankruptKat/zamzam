@@ -4,6 +4,7 @@ import { motion, type MotionProps, useInView, type Variants } from "framer-motio
 import { useRef } from "react";
 
 type Direction = "up" | "down" | "left" | "right";
+type MarginType = `${number}px` | `${number}px ${number}px` | `${number}px ${number}px ${number}px` | `${number}px ${number}px ${number}px ${number}px`;
 
 type BlurFadeProps = MotionProps & {
   children: React.ReactNode;
@@ -17,7 +18,7 @@ type BlurFadeProps = MotionProps & {
   offset?: number;
   direction?: Direction;
   inView?: boolean;
-  inViewMargin?: string;
+  inViewMargin?: MarginType;
   blur?: string;
 };
 

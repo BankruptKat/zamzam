@@ -52,14 +52,13 @@ export function AnimatedThemeToggler({
       });
     };
 
-    const transition = (document as Document & { startViewTransition?: StartViewTransition }).startViewTransition;
-
-    if (!transition) {
+    const docWithTransition = document as Document & { startViewTransition?: StartViewTransition };
+    if (!docWithTransition.startViewTransition) {
       applyTheme();
       return;
     }
 
-    const vt = transition(applyTheme);
+    const vt = docWithTransition.startViewTransition(applyTheme);
     await vt.ready;
 
     const { top, left, width, height } = buttonRef.current.getBoundingClientRect();

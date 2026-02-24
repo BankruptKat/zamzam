@@ -11,7 +11,7 @@ export function BentoGrid({
   children: ReactNode;
 }) {
   return (
-    <div className={cn("grid auto-rows-[19rem] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3", className)}>
+    <div className={cn("grid auto-rows-[20rem] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3", className)}>
       {children}
     </div>
   );
@@ -22,7 +22,6 @@ type BentoCardProps = {
   name: string;
   description: string;
   href: string;
-  cta: string;
   className?: string;
   background?: ReactNode;
 };
@@ -32,36 +31,32 @@ export function BentoCard({
   name,
   description,
   href,
-  cta,
   className,
   background,
 }: BentoCardProps) {
   return (
-    <div
+    <Link
+      href={href}
       className={cn(
-        "group relative overflow-hidden rounded-3xl border border-white/12 bg-white/6 p-6 shadow-[0_10px_36px_rgba(0,0,0,0.35)] backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-white/20",
+        "group relative block overflow-hidden rounded-2xl border border-white/8 bg-white/4 p-6 backdrop-blur-xl transition-all duration-300 hover:border-white/15 hover-lift",
         className,
       )}
     >
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/14 via-white/5 to-transparent opacity-65" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/6 to-transparent opacity-50" />
       {background ? (
-        <div className="pointer-events-none absolute inset-0 opacity-85 transition duration-300 ease-out group-hover:opacity-100">
+        <div className="pointer-events-none absolute inset-0 opacity-75 transition duration-500 group-hover:scale-105 group-hover:opacity-85">
           {background}
         </div>
       ) : null}
       <div className="relative z-10 flex h-full flex-col justify-end">
-        <div className="w-fit rounded-xl border border-white/14 bg-black/25 p-2 text-[#f4c3ad]">
-          <Icon aria-hidden className="h-4 w-4" />
+        {/* Reduced icon prominence */}
+        <div className="w-fit rounded-lg border border-white/8 bg-black/15 p-2 text-[#f4c3ad]/60 transition-all duration-300 group-hover:border-white/12 group-hover:text-[#f4c3ad]/80">
+          <Icon aria-hidden className="h-4 w-4 opacity-50 transition-opacity duration-300 group-hover:opacity-70" />
         </div>
-        <h3 className="mt-3 text-xl font-semibold text-white">{name}</h3>
-        <p className="mt-2 max-w-[44ch] text-sm leading-6 text-white/72">{description}</p>
-        <Link
-          href={href}
-          className="mt-4 w-fit text-sm font-semibold text-[#f4c3ad] transition-colors duration-300 ease-out hover:text-[#ffd3bf]"
-        >
-          {cta}
-        </Link>
+        <h3 className="mt-4 text-lg font-semibold text-white transition-colors duration-300">{name}</h3>
+        {/* Shortened description - one sentence max */}
+        <p className="mt-2 max-w-[40ch] text-sm leading-6 text-white/50 transition-colors duration-300 group-hover:text-white/60">{description}</p>
       </div>
-    </div>
+    </Link>
   );
 }

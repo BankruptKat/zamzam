@@ -7,9 +7,8 @@ const features = [
   {
     Icon: Home,
     name: "Driveway Transformation",
-    description: "Premium driveway rebuilds with clean edge detailing and durable finish quality.",
+    description: "Premium rebuilds with clean edge detailing and durable finishes.",
     href: "/services",
-    cta: "View Service",
     className: "md:col-span-2 lg:col-span-2",
     background: (
       <BlurFade inView duration={0.55} blur="8px">
@@ -26,9 +25,8 @@ const features = [
   {
     Icon: ShieldCheck,
     name: "Chimney Cap Rebuilds",
-    description: "Waterproof cap rebuilds and mortar restoration for long-term structural protection.",
+    description: "Waterproof caps and mortar restoration for lasting protection.",
     href: "/services",
-    cta: "Explore",
     className: "md:col-span-2 lg:col-span-1",
     background: (
       <BlurFade inView duration={0.55} blur="8px">
@@ -45,9 +43,8 @@ const features = [
   {
     Icon: Layers3,
     name: "Brick & Block Craftsmanship",
-    description: "High-precision brick and block work for elegant, resilient exterior architecture.",
+    description: "High-precision work for resilient exterior architecture.",
     href: "/services",
-    cta: "See Details",
     className: "md:col-span-1 lg:col-span-1",
     background: (
       <BlurFade inView duration={0.55} blur="8px">
@@ -64,9 +61,8 @@ const features = [
   {
     Icon: Hammer,
     name: "Stair & Structural Masonry",
-    description: "Stair block construction and structural upgrades with premium material standards.",
+    description: "Stair construction and structural upgrades with premium materials.",
     href: "/services",
-    cta: "Get Quote",
     className: "md:col-span-1 lg:col-span-2",
     background: (
       <BlurFade inView duration={0.55} blur="8px">

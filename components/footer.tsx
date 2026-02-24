@@ -3,23 +3,23 @@ import { address, businessName, email, phoneDisplay, phoneHref } from "@/lib/sit
 
 export default function Footer() {
   return (
-    <footer className="px-4 pb-24 pt-16 md:px-8 md:pb-10">
-      <div className="glass-panel mx-auto grid w-full max-w-6xl gap-8 rounded-3xl p-8 md:grid-cols-3">
+    <footer className="px-4 pb-24 pt-20 md:px-8 md:pb-10">
+      <div className="glass-panel mx-auto grid w-full max-w-6xl gap-10 rounded-2xl p-8 md:grid-cols-3 md:gap-8">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Zamzam</p>
-          <p className="mt-3 text-2xl font-semibold text-white">{businessName}</p>
-          <p className="mt-3 max-w-xs text-sm leading-7 text-white/65">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/50">Zamzam</p>
+          <p className="mt-2 text-xl font-semibold text-white">{businessName}</p>
+          <p className="mt-3 max-w-xs text-sm leading-6 text-white/55">
             Luxury-grade masonry and chimney craftsmanship for high-value residential properties.
           </p>
         </div>
 
         <div>
-          <p className="text-base font-semibold text-white">Quick Links</p>
-          <ul className="mt-3 space-y-2 text-sm text-white/70">
+          <p className="text-sm font-medium text-white/80">Quick Links</p>
+          <ul className="mt-3 space-y-2 text-sm text-white/55">
             <li>
               <Link
                 href="/"
-                className="luxury-link rounded-sm hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+                className="hover:text-white/80 transition-colors"
               >
                 Home
               </Link>
@@ -27,7 +27,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/services"
-                className="luxury-link rounded-sm hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+                className="hover:text-white/80 transition-colors"
               >
                 Services
               </Link>
@@ -35,7 +35,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/about"
-                className="luxury-link rounded-sm hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+                className="hover:text-white/80 transition-colors"
               >
                 About
               </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
             <li>
               <Link
                 href="/contact"
-                className="luxury-link rounded-sm hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+                className="hover:text-white/80 transition-colors"
               >
                 Contact
               </Link>
@@ -52,27 +52,25 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-base font-semibold text-white">Contact</p>
-          <ul className="mt-3 space-y-2 text-sm text-white/70">
+          <p className="text-sm font-medium text-white/80">Contact</p>
+          <ul className="mt-3 space-y-2 text-sm text-white/55">
             <li>
-              Phone:{" "}
               <a
                 href={phoneHref}
-                className="luxury-link rounded-sm hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+                className="hover:text-white/80 transition-colors"
               >
                 {phoneDisplay}
               </a>
             </li>
             <li>
-              Email:{" "}
               <a
                 href={`mailto:${email}`}
-                className="luxury-link rounded-sm hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+                className="hover:text-white/80 transition-colors"
               >
                 {email}
               </a>
             </li>
-            <li>Address: {address}</li>
+            <li>{address}</li>
           </ul>
         </div>
       </div>

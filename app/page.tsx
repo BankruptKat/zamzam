@@ -3,104 +3,104 @@ import Image from "next/image";
 import Link from "next/link";
 import BentoDemo from "@/components/bento-demo";
 import CtaButton from "@/components/cta-button";
+import ProcessSection from "@/components/process-section";
 import SectionReveal from "@/components/section-reveal";
+import SignatureStatement from "@/components/signature-statement";
 import TestimonialsDemo from "@/components/testimonials-demo";
 import { BlurFade } from "@/components/ui/blur-fade";
 import ServiceCard from "@/components/service-card";
 import { services } from "@/data/services";
-import { localBusinessSchema, phoneDisplay, phoneHref, serviceArea } from "@/lib/site";
+import { localBusinessSchema, phoneHref, serviceArea } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Reliable Masonry & Chimney Repairs",
+  title: "Precision Masonry & Chimney Restoration",
   description:
-    "Driveways, concrete work, brick repairs, chimney rebuilds, and chimney removal with roof repair in Victoria and Vancouver Island.",
+    "Architectural masonry and chimney restoration for discerning homeowners. Built for enduring strength.",
   alternates: {
     canonical: "/",
   },
 };
 
-const reasons = [
-  "Licensed & Detail-Driven Team",
-  "Precision Craftsmanship Standards",
-  "Premium Materials Only",
-  "Clear Communication & Scheduling",
-  "Clean, Respectful Job Sites",
-];
-
 export default function Home() {
   return (
     <>
-      <section className="relative px-4 pb-10 pt-6 md:px-8 md:pb-24 md:pt-10">
-        <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10">
-          <BlurFade duration={0.6} blur="8px">
-            <Image
-              src="/pics/hero-luxury-01.webp"
-              alt="Luxury masonry and architectural concrete backdrop"
-              width={1600}
-              height={1000}
-              priority
-              className="h-[520px] w-full object-cover md:h-[740px]"
-            />
-          </BlurFade>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070b12]/90 via-[#070b12]/65 to-[#070b12]/50" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(210,122,90,0.26),transparent_42%)]" />
+      {/* Architectural Hero Section */}
+      <section className="hero-content relative min-h-[100vh] overflow-hidden">
+        {/* Background Image with Cinematic Zoom */}
+        <div className="absolute inset-0">
+          <Image
+            src="/pics/hero-luxury-01.webp"
+            alt="Architectural masonry detail"
+            width={1600}
+            height={1000}
+            priority
+            className="h-full w-full object-cover hero-image-zoom"
+          />
+          {/* Multi-layered gradient overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/75 dark:from-[#070b12]/70 dark:via-[#070b12]/40 dark:to-[#070b12]/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-black/40 dark:from-[#070b12]/80 dark:to-[#070b12]/60" />
+          {/* Vignette */}
+          <div className="absolute inset-0 vignette-overlay" />
+          {/* Radial glow behind text */}
+          <div className="absolute inset-0 radial-glow" />
+          {/* Grain texture */}
+          <div className="absolute inset-0 grain-overlay" />
+        </div>
 
-          <div className="absolute inset-0 grid gap-8 px-5 py-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:p-12">
-            <SectionReveal className="self-center">
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#f2baa0] md:text-sm">
-                Premium Residential Masonry - {serviceArea}
+        {/* Hero Content - Staggered Animation */}
+        <div className="relative z-10 flex min-h-[100vh] items-center px-4 pb-8 pt-24 md:px-8 md:pt-28">
+          <div className="mx-auto w-full max-w-6xl">
+            <BlurFade delay={0.1} duration={1} blur="12px">
+              <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#f2baa0] md:text-sm">
+                {serviceArea}
               </p>
-              <h1 className="max-w-xl text-[2.45rem] font-semibold leading-[1.02] text-white md:max-w-3xl md:text-7xl">
-                Refined Masonry
+            </BlurFade>
+
+            <BlurFade delay={0.3} duration={1.2} blur="12px">
+              <h1 className="mt-6 max-w-4xl text-[2.8rem] font-semibold leading-[0.95] tracking-tight text-neutral-50 md:text-[5rem] lg:text-[6rem]">
+                Precision Masonry
                 <br />
-                Crafted for
-                <br />
-                Luxury Homes
+                <span className="text-neutral-200">& Chimney Restoration</span>
               </h1>
-              <p className="mt-3 max-w-lg text-sm leading-6 text-white/75 md:mt-6 md:max-w-2xl md:text-lg md:leading-8">
-                Driveways, chimney restoration, concrete, and brick work delivered with architectural
-                precision and premium finish quality.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-3 [&>a]:w-full sm:[&>a]:w-auto md:mt-8">
-                <CtaButton href={phoneHref} label="Call Now" />
-                <CtaButton href="/contact" label="Request Quote" variant="secondary" />
-              </div>
-            </SectionReveal>
+            </BlurFade>
 
-            <SectionReveal className="hidden glass-panel rounded-3xl p-6 lg:block lg:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                Trusted Services
+            <BlurFade delay={0.5} duration={1} blur="12px">
+              <p className="mt-8 max-w-md text-base leading-relaxed text-neutral-200/90 md:mt-10 md:text-lg">
+                Built for enduring strength. Architectural-grade craftsmanship for residential exteriors.
               </p>
-              <ul className="mt-4 space-y-3 text-sm text-white/85">
-                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">Chimney Repairs & Cap Rebuilds</li>
-                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">Driveways & Exterior Concrete</li>
-                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">Brick, Block & Stair Construction</li>
-                <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">Chimney Removal & Roof Restoration</li>
-              </ul>
-              <div className="mt-6 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                <p className="text-sm text-white/70">Book a Free Quote Call</p>
-                <a
-                  href={phoneHref}
-                  className="text-sm font-semibold text-[#f4c3ad] hover:text-[#ffd3bf] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
-                >
-                  {phoneDisplay}
-                </a>
+            </BlurFade>
+
+            <BlurFade delay={0.7} duration={0.8} blur="8px">
+              <div className="mt-10 flex flex-wrap items-center gap-4 md:mt-12">
+                <CtaButton href={phoneHref} label="Request a Free Consultation" />
+                <CtaButton href="/contact" label="Start Your Project" variant="secondary" />
               </div>
-            </SectionReveal>
+            </BlurFade>
+
+            <BlurFade delay={0.9} duration={0.8} blur="8px">
+              <p className="mt-6 text-xs text-neutral-300/70 md:mt-8">
+                Limited project availability. Premium materials. Meticulous execution.
+              </p>
+            </BlurFade>
           </div>
         </div>
       </section>
 
-      <section className="px-4 py-14 md:px-8 md:py-24">
-        <SectionReveal className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-semibold text-white md:text-5xl">Core Services</h2>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-white/65 md:text-lg">
-            Exterior masonry and chimney work tailored for homeowners and property investors seeking
-            premium, long-lasting outcomes.
+      {/* Core Services Section */}
+      <section className="px-4 py-24 md:px-8 md:py-32">
+        <SectionReveal className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center">
+          <div className="flex justify-center">
+            <div className="rounded-full border border-white/10 bg-white/4 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-white/70">
+              Services
+            </div>
+          </div>
+          <h2 className="mt-4 text-center text-2xl font-semibold text-white md:text-4xl">Core Services</h2>
+          <p className="mt-2 max-w-xl text-center text-base leading-7 text-white/55">
+            Architectural masonry and chimney work for discerning homeowners.
           </p>
         </SectionReveal>
 
-        <div className="mx-auto mt-10 grid w-full max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid w-full max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <SectionReveal key={service.slug}>
               <ServiceCard service={service} />
@@ -108,99 +108,119 @@ export default function Home() {
           ))}
         </div>
 
-        <SectionReveal className="mx-auto mt-8 w-full max-w-6xl">
-          <Link href="/services" className="luxury-link text-sm font-semibold text-[#f4c3ad]">
-            Explore Full Service Scope
+        <SectionReveal className="mx-auto mt-12 flex w-full max-w-6xl justify-center">
+          <Link href="/services" className="text-sm font-medium text-[#f4c3ad] hover:text-[#ffd3bf] transition-colors">
+            View All Services
           </Link>
         </SectionReveal>
       </section>
 
-      <section className="px-4 pb-6 md:px-8 md:pb-10">
-        <SectionReveal className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-semibold text-white md:text-5xl">Project Highlights</h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/65">
-            A bento-grid showcase inspired by MagicUI to highlight signature service outcomes and craftsmanship.
-          </p>
-          <div className="mt-8">
-            <BentoDemo />
+      {/* Process Section */}
+      <ProcessSection />
+
+      {/* Project Highlights - Bento Grid */}
+      <section className="px-4 py-24 md:px-8 md:py-32">
+        <SectionReveal className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center">
+          <div className="flex justify-center">
+            <div className="rounded-full border border-white/10 bg-white/4 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-white/70">
+              Highlights
+            </div>
           </div>
+          <h2 className="mt-4 text-center text-2xl font-semibold text-white md:text-4xl">Project Highlights</h2>
+          <p className="mt-2 max-w-xl text-center text-base leading-7 text-white/55">
+            Curated outcomes showcasing precision and craftsmanship.
+          </p>
         </SectionReveal>
+        <div className="mx-auto mt-14 w-full max-w-6xl">
+          <BentoDemo />
+        </div>
       </section>
 
-      <section className="px-4 py-16 md:px-8 md:py-20">
-        <SectionReveal className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-semibold text-white md:text-5xl">Featured Projects</h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/65">
-            Selected transformations showcasing precision masonry, chimney restoration, and elevated curb appeal.
-          </p>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+      {/* Featured Projects - Horizontal Scroll Gallery */}
+      <section className="py-24 md:py-32">
+        <div className="px-4 md:px-8">
+          <SectionReveal className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center">
+            <div className="flex justify-center">
+              <div className="rounded-full border border-white/10 bg-white/4 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-white/70">
+                Portfolio
+              </div>
+            </div>
+            <h2 className="mt-4 text-center text-2xl font-semibold text-white md:text-4xl">Featured Projects</h2>
+            <p className="mt-2 max-w-xl text-center text-base leading-7 text-white/55">
+              Selected transformations with elevated architectural photography.
+            </p>
+          </SectionReveal>
+        </div>
+
+        {/* Horizontal Scroll Gallery */}
+        <div className="mt-14 overflow-x-auto scroll-snap-x px-4 md:px-8">
+          <div className="mx-auto flex w-fit max-w-6xl gap-5">
             {[
               {
-                title: "Concrete Driveway Upgrade",
-                detail: "Exposed aggregate finish & edge detailing",
+                title: "Concrete Driveway",
+                detail: "Exposed aggregate finish with refined edge detailing",
                 image: "/pics/project-featured-01.webp",
+                size: "large",
               },
               {
                 title: "Chimney Cap Rebuild",
-                detail: "Waterproof cap + mortar restoration",
+                detail: "Waterproof cap with full mortar restoration",
                 image: "/pics/project-featured-02.webp",
+                size: "medium",
               },
               {
-                title: "Brick Stair Reconstruction",
-                detail: "Structural block base with premium finish",
+                title: "Brick Stair Construction",
+                detail: "Structural base with premium surface finish",
                 image: "/pics/project-featured-03.webp",
+                size: "medium",
               },
-            ].map((project) => (
-              <article key={project.title} className="glass-panel rounded-3xl p-5">
-                <BlurFade inView inViewMargin="-80px" duration={0.5} blur="8px">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={1600}
-                    height={1100}
-                    className="mb-4 h-52 w-full rounded-2xl border border-white/10 object-cover sm:h-44"
-                  />
-                </BlurFade>
-                <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent p-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[#f4c3ad]">Featured</p>
-                  <h3 className="mt-2 text-xl font-semibold text-white">{project.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-white/70">{project.detail}</p>
-                </div>
+              {
+                title: "Exterior Masonry",
+                detail: "Full facade restoration with architectural detail",
+                image: "/pics/service-brick-block.webp",
+                size: "large",
+              },
+            ].map((project, index) => (
+              <article
+                key={project.title}
+                className={`group relative flex-shrink-0 scroll-snap-align-start overflow-hidden rounded-2xl ${
+                  project.size === "large" ? "w-[340px] md:w-[480px]" : "w-[300px] md:w-[380px]"
+                }`}
+              >
+                <Link href="/services" className="block">
+                  {/* Image with hover zoom */}
+                  <div className={`relative overflow-hidden ${project.size === "large" ? "h-[380px] md:h-[520px]" : "h-[340px] md:h-[420px]"}`}>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={1600}
+                      height={1100}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#070b12]/95 via-[#070b12]/30 to-transparent" />
+                  </div>
+
+                  {/* Text content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                    <p className="text-xs uppercase tracking-[0.14em] text-[#f4c3ad]/70">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-1 text-xl font-semibold text-white md:text-2xl">{project.title}</h3>
+                    <p className="mt-1 text-sm text-white/60">{project.detail}</p>
+                  </div>
+                </Link>
               </article>
             ))}
           </div>
-        </SectionReveal>
+        </div>
       </section>
 
-      <section className="px-4 py-16 md:px-8 md:py-20">
-        <SectionReveal className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-semibold text-white md:text-5xl">Why Homeowners Choose Us</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {reasons.map((reason) => (
-              <p key={reason} className="glass-panel rounded-2xl px-4 py-4 text-sm font-medium uppercase tracking-[0.08em] text-white/85">
-                {reason}
-              </p>
-            ))}
-          </div>
-        </SectionReveal>
-      </section>
-
+      {/* Testimonials */}
       <TestimonialsDemo />
 
-      <section className="px-4 pb-24 pt-8 md:px-8 md:pb-20">
-        <SectionReveal className="glass-panel mx-auto flex w-full max-w-6xl flex-col gap-4 rounded-3xl border-white/15 p-8 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 className="text-3xl font-semibold text-white md:text-4xl">Need Repairs or a New Installation?</h2>
-            <p className="mt-3 text-lg text-white/70">Speak with our team today for a free quote.</p>
-          </div>
-          <a
-            href={phoneHref}
-            className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-7 text-base font-semibold text-white shadow-[0_16px_40px_rgba(178,95,64,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(178,95,64,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f8cdb5]"
-          >
-            Call {phoneDisplay}
-          </a>
-        </SectionReveal>
-      </section>
+      {/* Signature Statement */}
+      <SignatureStatement />
 
       <script
         type="application/ld+json"
