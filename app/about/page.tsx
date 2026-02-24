@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CtaButton from "@/components/cta-button";
 import SectionReveal from "@/components/section-reveal";
+import { BlurFade } from "@/components/ui/blur-fade";
 import { phoneHref } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,14 +19,16 @@ export default function AboutPage() {
     <section className="px-4 py-16 md:px-8 md:py-20">
       <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
         <SectionReveal className="glass-panel rounded-3xl p-8 md:p-10">
-          <Image
-            src="/pics/about-team-worksite.webp"
-            alt="Masonry team at a premium residential worksite"
-            width={1600}
-            height={1100}
-            className="h-72 w-full rounded-2xl border border-white/10 object-cover md:h-96"
-            priority
-          />
+          <BlurFade inView duration={0.55} blur="8px">
+            <Image
+              src="/pics/about-team-worksite.webp"
+              alt="Masonry team at a premium residential worksite"
+              width={1600}
+              height={1100}
+              className="h-72 w-full rounded-2xl border border-white/10 object-cover md:h-96"
+              priority
+            />
+          </BlurFade>
           <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-[#f2baa0]">
             About the Company
           </p>

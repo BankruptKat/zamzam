@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { phoneDisplay, phoneHref } from "@/lib/site";
 
 const navItems = [
@@ -22,7 +23,7 @@ export default function Header() {
           Zamzam Masonry
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex" aria-label="Main Navigation">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main Navigation">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -34,27 +35,30 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          href={phoneHref}
-          className="hidden min-h-11 items-center rounded-full border border-white/20 bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-4 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(178,95,64,0.38)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_38px_rgba(178,95,64,0.44)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f8cdb5] lg:inline-flex"
-        >
-          Call {phoneDisplay}
-        </a>
+        <div className="flex items-center gap-2">
+          <AnimatedThemeToggler />
+          <a
+            href={phoneHref}
+            className="hidden min-h-11 items-center rounded-full border border-white/20 bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-4 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(178,95,64,0.38)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_38px_rgba(178,95,64,0.44)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f8cdb5] xl:inline-flex"
+          >
+            Call {phoneDisplay}
+          </a>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen((prev) => !prev)}
-          className="inline-flex items-center rounded-full border border-white/20 bg-white/10 p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] md:hidden"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
-          aria-controls="mobile-nav"
-        >
-          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          <button
+            type="button"
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="inline-flex items-center rounded-full border border-white/20 bg-white/10 p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] lg:hidden"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {isOpen ? (
-        <div id="mobile-nav" className="mx-auto mt-3 w-full max-w-6xl md:hidden">
+        <div id="mobile-nav" className="mx-auto mt-3 w-full max-w-6xl lg:hidden">
           <nav
             className="glass-panel flex flex-col rounded-2xl border-white/15 px-4 py-4"
             aria-label="Mobile Navigation"

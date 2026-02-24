@@ -24,8 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${headingFont.variable} ${bodyFont.variable} antialiased`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var stored=localStorage.getItem('theme');var prefers=window.matchMedia('(prefers-color-scheme: dark)').matches;var dark=stored?stored==='dark':prefers;document.documentElement.classList.toggle('dark',dark);}catch(e){document.documentElement.classList.add('dark')}})();`,
+          }}
+        />
         <a
           href="#main-content"
           className="sr-only z-50 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0b0d12] focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"

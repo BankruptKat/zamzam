@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BentoDemo from "@/components/bento-demo";
 import CtaButton from "@/components/cta-button";
 import SectionReveal from "@/components/section-reveal";
+import TestimonialsDemo from "@/components/testimonials-demo";
+import { BlurFade } from "@/components/ui/blur-fade";
 import ServiceCard from "@/components/service-card";
 import { services } from "@/data/services";
 import { localBusinessSchema, phoneDisplay, phoneHref, serviceArea } from "@/lib/site";
@@ -27,42 +30,44 @@ const reasons = [
 export default function Home() {
   return (
     <>
-      <section className="relative px-4 pb-12 pt-6 md:px-8 md:pb-24 md:pt-10">
+      <section className="relative px-4 pb-10 pt-6 md:px-8 md:pb-24 md:pt-10">
         <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10">
-          <Image
-            src="/pics/hero-luxury-01.webp"
-            alt="Luxury masonry and architectural concrete backdrop"
-            width={1600}
-            height={1000}
-            priority
-            className="h-[560px] w-full object-cover md:h-[740px]"
-          />
+          <BlurFade duration={0.6} blur="8px">
+            <Image
+              src="/pics/hero-luxury-01.webp"
+              alt="Luxury masonry and architectural concrete backdrop"
+              width={1600}
+              height={1000}
+              priority
+              className="h-[520px] w-full object-cover md:h-[740px]"
+            />
+          </BlurFade>
           <div className="absolute inset-0 bg-gradient-to-r from-[#070b12]/90 via-[#070b12]/65 to-[#070b12]/50" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(210,122,90,0.26),transparent_42%)]" />
 
-          <div className="absolute inset-0 grid gap-8 px-5 py-7 md:grid-cols-[1.2fr_0.8fr] md:items-end md:p-12">
+          <div className="absolute inset-0 grid gap-8 px-5 py-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:p-12">
             <SectionReveal className="self-center">
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#f2baa0] md:text-sm">
                 Premium Residential Masonry - {serviceArea}
               </p>
-              <h1 className="max-w-3xl text-3xl font-semibold leading-[1.05] text-white md:text-7xl">
+              <h1 className="max-w-xl text-[2.45rem] font-semibold leading-[1.02] text-white md:max-w-3xl md:text-7xl">
                 Refined Masonry
                 <br />
                 Crafted for
                 <br />
                 Luxury Homes
               </h1>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/75 md:mt-6 md:text-lg md:leading-8">
+              <p className="mt-3 max-w-lg text-sm leading-6 text-white/75 md:mt-6 md:max-w-2xl md:text-lg md:leading-8">
                 Driveways, chimney restoration, concrete, and brick work delivered with architectural
                 precision and premium finish quality.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3 md:mt-8">
+              <div className="mt-5 flex flex-wrap gap-3 [&>a]:w-full sm:[&>a]:w-auto md:mt-8">
                 <CtaButton href={phoneHref} label="Call Now" />
                 <CtaButton href="/contact" label="Request Quote" variant="secondary" />
               </div>
             </SectionReveal>
 
-            <SectionReveal className="hidden glass-panel rounded-3xl p-6 md:block md:p-7">
+            <SectionReveal className="hidden glass-panel rounded-3xl p-6 lg:block lg:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                 Trusted Services
               </p>
@@ -86,20 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 py-8 md:px-8">
-        <SectionReveal className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-3 rounded-3xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl sm:grid-cols-2 md:grid-cols-4">
-          {["Fully Insured", "Clean Workmanship", "Premium Materials", "Free Estimates"].map((item) => (
-            <div
-              key={item}
-              className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/70"
-            >
-              {item}
-            </div>
-          ))}
-        </SectionReveal>
-      </section>
-
-      <section className="px-4 py-16 md:px-8 md:py-24">
+      <section className="px-4 py-14 md:px-8 md:py-24">
         <SectionReveal className="mx-auto w-full max-w-6xl">
           <h2 className="text-3xl font-semibold text-white md:text-5xl">Core Services</h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-white/65 md:text-lg">
@@ -120,6 +112,18 @@ export default function Home() {
           <Link href="/services" className="luxury-link text-sm font-semibold text-[#f4c3ad]">
             Explore Full Service Scope
           </Link>
+        </SectionReveal>
+      </section>
+
+      <section className="px-4 pb-6 md:px-8 md:pb-10">
+        <SectionReveal className="mx-auto w-full max-w-6xl">
+          <h2 className="text-3xl font-semibold text-white md:text-5xl">Project Highlights</h2>
+          <p className="mt-4 max-w-2xl text-base leading-8 text-white/65">
+            A bento-grid showcase inspired by MagicUI to highlight signature service outcomes and craftsmanship.
+          </p>
+          <div className="mt-8">
+            <BentoDemo />
+          </div>
         </SectionReveal>
       </section>
 
@@ -148,13 +152,15 @@ export default function Home() {
               },
             ].map((project) => (
               <article key={project.title} className="glass-panel rounded-3xl p-5">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={1600}
-                  height={1100}
-                  className="mb-4 h-52 w-full rounded-2xl border border-white/10 object-cover sm:h-44"
-                />
+                <BlurFade inView inViewMargin="-80px" duration={0.5} blur="8px">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={1600}
+                    height={1100}
+                    className="mb-4 h-52 w-full rounded-2xl border border-white/10 object-cover sm:h-44"
+                  />
+                </BlurFade>
                 <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-transparent p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-[#f4c3ad]">Featured</p>
                   <h3 className="mt-2 text-xl font-semibold text-white">{project.title}</h3>
@@ -179,21 +185,7 @@ export default function Home() {
         </SectionReveal>
       </section>
 
-      <section className="px-4 py-12 md:px-8 md:py-20">
-        <SectionReveal className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-semibold text-white md:text-5xl">Client Feedback</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {[
-              "Professional from start to finish. The chimney rebuild and roofing repair were clean, fast, and done right.",
-              "The driveway and stair block work completely changed our curb appeal. Great communication and premium result.",
-            ].map((quote) => (
-              <blockquote key={quote} className="glass-panel rounded-3xl p-6 text-base leading-8 text-white/80">
-                &ldquo;{quote}&rdquo;
-              </blockquote>
-            ))}
-          </div>
-        </SectionReveal>
-      </section>
+      <TestimonialsDemo />
 
       <section className="px-4 pb-24 pt-8 md:px-8 md:pb-20">
         <SectionReveal className="glass-panel mx-auto flex w-full max-w-6xl flex-col gap-4 rounded-3xl border-white/15 p-8 md:flex-row md:items-center md:justify-between">

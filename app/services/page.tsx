@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CtaButton from "@/components/cta-button";
 import SectionReveal from "@/components/section-reveal";
+import { BlurFade } from "@/components/ui/blur-fade";
 import { services } from "@/data/services";
 import { phoneHref } from "@/lib/site";
 
@@ -61,13 +62,15 @@ export default function ServicesPage() {
           {services.map((service) => (
             <SectionReveal key={service.slug}>
               <article className="glass-panel rounded-3xl p-6 md:p-8">
-                <Image
-                  src={serviceImages[service.slug]?.src ?? "/pics/service-concrete.webp"}
-                  alt={serviceImages[service.slug]?.alt ?? service.title}
-                  width={1600}
-                  height={1100}
-                  className="mb-5 h-48 w-full rounded-2xl border border-white/10 object-cover md:h-56"
-                />
+                <BlurFade inView inViewMargin="-80px" duration={0.5} blur="8px">
+                  <Image
+                    src={serviceImages[service.slug]?.src ?? "/pics/service-concrete.webp"}
+                    alt={serviceImages[service.slug]?.alt ?? service.title}
+                    width={1600}
+                    height={1100}
+                    className="mb-5 h-48 w-full rounded-2xl border border-white/10 object-cover md:h-56"
+                  />
+                </BlurFade>
                 <h2 className="text-2xl font-semibold text-white">{service.title}</h2>
                 <p className="mt-3 text-base leading-8 text-white/70">{service.shortDescription}</p>
 
