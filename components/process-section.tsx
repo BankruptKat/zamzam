@@ -41,10 +41,10 @@ export default function ProcessSection() {
               Our Process
             </div>
           </div>
-          <h2 className="mt-4 text-center text-3xl font-semibold text-white md:text-5xl">
+          <h2 className="mt-4 text-center text-3xl font-semibold text-slate-900 dark:text-white md:text-5xl">
             How We Work
           </h2>
-          <p className="mt-3 max-w-2xl text-center text-base leading-7 text-white/55 md:text-lg">
+          <p className="mt-3 max-w-2xl text-center text-base leading-7 text-slate-500 dark:text-white/55 md:text-lg">
             A clear architectural workflow from first site review to final finish.
           </p>
         </motion.div>
@@ -72,16 +72,15 @@ export default function ProcessSection() {
                   </div>
 
                   <div
-                    className={`col-start-2 row-start-1 md:row-auto ${
-                      isLeft ? "md:col-start-1 md:text-right" : "md:col-start-3 md:text-left"
-                    }`}
+                    className={`col-start-2 row-start-1 md:row-auto ${isLeft ? "md:col-start-1 md:text-right" : "md:col-start-3 md:text-left"
+                      }`}
                   >
                     <article className="glass-panel rounded-2xl border border-slate-300/70 p-5 dark:border-white/12 md:p-6">
                       <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-[#9b4f34] dark:text-[#f4c3ad]/75">
                         Step {step.number}
                       </p>
-                      <h3 className="mt-2 text-lg font-semibold text-white md:text-xl">{step.title}</h3>
-                      <p className="mt-2.5 text-sm leading-7 text-white/60 md:text-[15px]">{step.description}</p>
+                      <h3 className="mt-2 text-lg font-semibold text-slate-900 dark:text-white md:text-xl">{step.title}</h3>
+                      <p className="mt-2.5 text-sm leading-7 text-slate-500 dark:text-white/60 md:text-[15px]">{step.description}</p>
                     </article>
                   </div>
                 </motion.div>

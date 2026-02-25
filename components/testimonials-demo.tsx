@@ -89,10 +89,10 @@ export default function TestimonialsDemo() {
               Testimonials
             </div>
           </div>
-          <h2 className="mt-4 text-center text-2xl font-semibold text-white md:text-4xl">
+          <h2 className="mt-4 text-center text-2xl font-semibold text-slate-900 dark:text-white md:text-4xl">
             What our clients say
           </h2>
-          <p className="mt-2 text-center text-base leading-7 text-white/55">
+          <p className="mt-2 text-center text-base leading-7 text-slate-500 dark:text-white/55">
             See what homeowners say about our craftsmanship, communication, and finishing quality.
           </p>
         </motion.div>
