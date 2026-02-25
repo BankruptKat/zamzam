@@ -81,7 +81,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <>
       <article className="group relative block h-full overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:border-white/20 hover-lift">
-        <div className="relative h-80 sm:h-96 md:h-96 lg:h-80">
+        <div className="relative h-52 sm:h-64 md:h-72 lg:h-80">
           <Image
             src={image.src}
             alt={image.alt}
