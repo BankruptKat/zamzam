@@ -12,7 +12,7 @@ export default function SignatureStatement({
   subtitle,
 }: SignatureStatementProps) {
   return (
-    <section className="relative overflow-hidden bg-[#edf2f9] py-32 dark:bg-transparent md:py-48">
+    <section className="relative overflow-hidden py-32 md:py-48">
       {/* Background large text */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
         <motion.div

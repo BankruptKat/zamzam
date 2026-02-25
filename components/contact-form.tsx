@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { cn } from "@/lib/utils";
 
 type ContactFormValues = {
   name: string;
@@ -16,13 +17,15 @@ const serviceOptions = [
   "Concrete work",
   "Brick work",
   "Chimney repair",
-  "Chimney cap rebuild",
-  "Chimney removal",
-  "Roofing repair after chimney removal",
+  "Masonry restoration",
   "Stair block construction",
 ];
 
-export default function ContactForm() {
+type ContactFormProps = {
+  className?: string;
+};
+
+export default function ContactForm({ className }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const {
@@ -61,18 +64,18 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="glass-panel space-y-4 rounded-3xl p-6 md:p-8"
+      className={cn("glass-panel space-y-4 rounded-3xl p-6 md:p-8", className)}
       noValidate
     >
       <div>
-        <label htmlFor="name" className="mb-1 block text-sm font-semibold text-white/90">
+        <label htmlFor="name" className="mb-1 block text-sm font-semibold text-[#1f2937] dark:text-white/90">
           Name
         </label>
         <input
           id="name"
           type="text"
           autoComplete="name"
-          className="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/45 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.name ? "true" : "false"}
           aria-describedby={errors.name ? "name-error" : undefined}
           {...register("name", { required: "Name is required." })}
@@ -85,7 +88,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="phone" className="mb-1 block text-sm font-semibold text-white/90">
+        <label htmlFor="phone" className="mb-1 block text-sm font-semibold text-[#1f2937] dark:text-white/90">
           Phone
         </label>
         <input
@@ -93,7 +96,7 @@ export default function ContactForm() {
           type="tel"
           autoComplete="tel"
           inputMode="tel"
-          className="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/45 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.phone ? "true" : "false"}
           aria-describedby={errors.phone ? "phone-error" : undefined}
           {...register("phone", { required: "Phone is required." })}
@@ -106,7 +109,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-1 block text-sm font-semibold text-white/90">
+        <label htmlFor="email" className="mb-1 block text-sm font-semibold text-[#1f2937] dark:text-white/90">
           Email
         </label>
         <input
@@ -114,7 +117,7 @@ export default function ContactForm() {
           type="email"
           autoComplete="email"
           spellCheck={false}
-          className="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/45 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}
           {...register("email", {
@@ -135,14 +138,14 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="serviceNeeded"
-          className="mb-1 block text-sm font-semibold text-white/90"
+          className="mb-1 block text-sm font-semibold text-[#1f2937] dark:text-white/90"
         >
           Service Needed
         </label>
         <select
           id="serviceNeeded"
           autoComplete="off"
-          className="w-full rounded-xl border border-white/15 bg-[#111722] px-3 py-2.5 text-sm text-white focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+          className="w-full rounded-xl border border-slate-200/70 bg-white/95 px-3 py-2.5 text-sm text-[#0d1528] [color-scheme:light] focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-[#111722] dark:text-white dark:[color-scheme:dark]"
           aria-invalid={errors.serviceNeeded ? "true" : "false"}
           aria-describedby={errors.serviceNeeded ? "service-error" : undefined}
           {...register("serviceNeeded", { required: "Please choose a service." })}
@@ -165,14 +168,14 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-1 block text-sm font-semibold text-white/90">
+        <label htmlFor="message" className="mb-1 block text-sm font-semibold text-[#1f2937] dark:text-white/90">
           Message
         </label>
         <textarea
           id="message"
           rows={5}
           autoComplete="off"
-          className="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/45 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={errors.message ? "message-error" : undefined}
           {...register("message", {
@@ -195,11 +198,11 @@ export default function ContactForm() {
         disabled={isSubmitting}
         className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(178,95,64,0.35)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_44px_rgba(178,95,64,0.44)] disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {isSubmitting ? "Sending…" : "Request a Quote"}
+        {isSubmitting ? "Sending..." : "Request a Quote"}
       </button>
 
       {status === "success" ? (
-        <p className="text-sm font-medium text-green-300" role="status" aria-live="polite">
+        <p className="text-sm font-medium text-green-700 dark:text-green-300" role="status" aria-live="polite">
           Thank you. Your message was sent successfully.
         </p>
       ) : null}

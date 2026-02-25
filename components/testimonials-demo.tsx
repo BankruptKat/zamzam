@@ -85,7 +85,7 @@ export default function TestimonialsDemo() {
           className="mx-auto flex max-w-xl flex-col items-center justify-center"
         >
           <div className="flex justify-center">
-            <div className="rounded-full border border-white/10 bg-white/4 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-white/70">
+            <div className="rounded-full border border-slate-300/80 bg-white/85 px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-slate-600 dark:border-white/10 dark:bg-white/4 dark:text-white/70">
               Testimonials
             </div>
           </div>

@@ -32,13 +32,9 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
     src: "/pics/service-chimney-repair.webp",
     alt: "Repaired residential chimney masonry",
   },
-  "chimney-cap-rebuild": {
-    src: "/pics/service-cap-rebuild.webp",
-    alt: "Newly rebuilt chimney cap with premium finish",
-  },
-  "chimney-removal": {
-    src: "/pics/service-chimney-removal-roof.webp",
-    alt: "Roof repair after chimney removal",
+  "masonry-restoration": {
+    src: "/pics/service-brick-block.webp",
+    alt: "Restored masonry wall and repointed brick detail",
   },
   "stair-block-work": {
     src: "/pics/service-stair-block.webp",
@@ -48,13 +44,13 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 
 export default function ServicesPage() {
   return (
-    <section className="px-4 py-14 md:px-8 md:py-24">
+    <section className="px-4 pb-14 pt-28 md:px-8 md:pb-24 md:pt-32">
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
         <SectionReveal className="mb-12 text-center md:mb-16">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#f4c3ad]/70">What We Do</p>
-          <h1 className="mt-4 text-4xl font-semibold text-white md:text-6xl">Service Overview</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#9b4f34] dark:text-[#f4c3ad]/70">What We Do</p>
+          <h1 className="mt-4 text-4xl font-semibold text-slate-900 dark:text-white md:text-6xl">Service Overview</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-500 dark:text-white/55">
             Every project begins with precise planning and ends with meticulous execution.
             Premium materials. Architectural standards.
           </p>
@@ -76,22 +72,22 @@ export default function ServicesPage() {
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </BlurFade>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070b12]/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent dark:from-[#070b12]/80 dark:to-transparent" />
                 </div>
 
                 {/* Content */}
                 <div className="p-5">
                   <div className="flex items-start justify-between">
-                    <h2 className="text-xl font-semibold text-white">{service.title}</h2>
-                    <span className="text-3xl font-bold text-white/10">{String(index + 1).padStart(2, "0")}</span>
+                    <h2 className="text-xl font-semibold text-slate-900 dark:text-white">{service.title}</h2>
+                    <span className="text-3xl font-bold text-slate-200 dark:text-white/10">{String(index + 1).padStart(2, "0")}</span>
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-white/55">{service.shortDescription}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-white/55">{service.shortDescription}</p>
 
                   {/* Included items - minimal */}
-                  <ul className="mt-4 space-y-1 text-xs text-white/40">
+                  <ul className="mt-4 space-y-1 text-xs text-slate-400 dark:text-white/40">
                     {service.included.slice(0, 3).map((item) => (
                       <li key={item} className="flex items-center gap-2">
-                        <span className="h-px w-3 bg-white/20" />
+                        <span className="h-px w-3 bg-slate-300 dark:bg-white/20" />
                         {item}
                       </li>
                     ))}
@@ -105,12 +101,12 @@ export default function ServicesPage() {
         {/* CTA Section */}
         <SectionReveal className="mt-16 text-center md:mt-20">
           <div className="glass-panel mx-auto max-w-2xl rounded-2xl p-8">
-            <h2 className="text-2xl font-semibold text-white">Ready to Begin?</h2>
-            <p className="mt-2 text-sm text-white/55">
+            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">Ready to Begin?</h2>
+            <p className="mt-2 text-sm text-slate-500 dark:text-white/55">
               Schedule your consultation to discuss your project requirements.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <CtaButton href={phoneHref} label="Request a Free Consultation" />
+              <CtaButton href={phoneHref} label="Request Consultation" />
               <CtaButton href="/contact" label="Start Your Project" variant="secondary" />
             </div>
           </div>

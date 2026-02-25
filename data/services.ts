@@ -1,12 +1,11 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  ArrowUpFromLine,
   BrickWall,
   Building2,
   Hammer,
   House,
+  Paintbrush,
   MountainSnow,
-  ShieldCheck,
 } from "lucide-react";
 
 export type ServiceItem = {
@@ -85,36 +84,20 @@ export const services: ServiceItem[] = [
     icon: Building2,
   },
   {
-    title: "Chimney Cap Rebuild",
-    slug: "chimney-cap-rebuild",
+    title: "Masonry Restoration",
+    slug: "masonry-restoration",
     shortDescription:
-      "Rebuild worn chimney caps to stop moisture penetration and protect interior structure.",
+      "Restore aging masonry surfaces with targeted repairs, repointing, and clean architectural finishing.",
     included: [
-      "Cap removal and rebuild",
-      "Moisture-resistant finishing",
-      "Flashing and top joint checks",
-      "Protective sealing",
+      "Mortar joint repointing",
+      "Brick replacement and patching",
+      "Surface cleaning and restoration",
+      "Weatherproof finishing and sealing",
     ],
     whyItMatters:
-      "A healthy chimney cap is your first defense against water damage and freeze-thaw deterioration.",
-    ctaLabel: "Call Now",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Chimney Removal & Roof Repair",
-    slug: "chimney-removal",
-    shortDescription:
-      "Safe chimney removal followed by roof closure and repair for a weather-tight result.",
-    included: [
-      "Controlled chimney dismantling",
-      "Debris removal and cleanup",
-      "Roof deck and shingle repair",
-      "Waterproofing of the repaired roof section",
-    ],
-    whyItMatters:
-      "Proper removal and roof repair prevent leaks, structural stress, and future interior damage.",
+      "Restoration extends structural life while preserving the original look of your masonry exterior.",
     ctaLabel: "Request Quote",
-    icon: ArrowUpFromLine,
+    icon: Paintbrush,
   },
   {
     title: "Stair Block Construction",

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { phoneDisplay, phoneHref } from "@/lib/site";
+import { phoneHref } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -17,27 +17,28 @@ const navItems = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const overlayRoutes = ["/", "/about"];
+  const isOverlay = overlayRoutes.includes(pathname);
 
   return (
-    <header className={`${isHome ? "fixed" : "sticky"} top-0 z-50 w-full px-4 pt-3 md:px-8`}>
+    <header className="fixed top-0 z-50 w-full px-4 pt-3 md:px-8">
       <div
-        className={`mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl px-4 py-3 md:px-5 ${
-          isHome
-            ? "border border-white/20 bg-black/30 shadow-[0_10px_28px_rgba(0,0,0,0.32)] backdrop-blur-xl"
-            : "glass-panel border-white/10"
+        className={`mx-auto flex w-full max-w-6xl items-center justify-between rounded-full px-4 py-2.5 md:px-6 ${
+          isOverlay
+            ? "border border-white/15 bg-black/40 shadow-[0_12px_34px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+            : "border border-white/20 bg-black/50 shadow-[0_12px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl"
         }`}
       >
-        <Link href="/" className="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-100 md:text-base">
+        <Link href="/" className="text-sm font-semibold tracking-[0.03em] text-neutral-100 md:text-base">
           Zamzam Masonry
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main Navigation">
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Main Navigation">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="luxury-link rounded-sm text-sm font-medium text-neutral-200/85 transition-colors hover:text-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+              className="rounded-sm text-sm font-medium text-neutral-200/80 transition-colors hover:text-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
             >
               {item.label}
             </Link>
@@ -69,10 +70,10 @@ export default function Header() {
       {isOpen ? (
         <div id="mobile-nav" className="mx-auto mt-3 w-full max-w-6xl lg:hidden">
           <nav
-            className={`flex flex-col rounded-2xl px-4 py-4 ${
-              isHome
+            className={`flex flex-col rounded-3xl px-4 py-4 ${
+              isOverlay
                 ? "border border-white/20 bg-black/45 backdrop-blur-xl"
-                : "glass-panel border-white/15"
+                : "border border-white/20 bg-black/40 backdrop-blur-xl"
             }`}
             aria-label="Mobile Navigation"
           >

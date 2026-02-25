@@ -41,8 +41,7 @@ export function AnimatedThemeToggler({
 
   const toggleTheme = useCallback(async () => {
     if (!buttonRef.current) return;
-
-    const nextThemeDark = !isDark;
+    const nextThemeDark = !document.documentElement.classList.contains("dark");
 
     const applyTheme = () => {
       flushSync(() => {
@@ -57,29 +56,35 @@ export function AnimatedThemeToggler({
       applyTheme();
       return;
     }
+    try {
+      const vt = docWithTransition.startViewTransition(applyTheme);
+      await vt.ready;
 
-    const vt = docWithTransition.startViewTransition(applyTheme);
-    await vt.ready;
+      // Keep theme switch stable even if view-transition animation is unsupported.
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const { top, left, width, height } = buttonRef.current.getBoundingClientRect();
-    const x = left + width / 2;
-    const y = top + height / 2;
-    const maxRadius = Math.hypot(
-      Math.max(left, window.innerWidth - left),
-      Math.max(top, window.innerHeight - top),
-    );
+      const { top, left, width, height } = buttonRef.current.getBoundingClientRect();
+      const x = left + width / 2;
+      const y = top + height / 2;
+      const maxRadius = Math.hypot(
+        Math.max(left, window.innerWidth - left),
+        Math.max(top, window.innerHeight - top),
+      );
 
-    document.documentElement.animate(
-      {
-        clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${maxRadius}px at ${x}px ${y}px)`],
-      },
-      {
-        duration,
-        easing: "ease-in-out",
-        pseudoElement: "::view-transition-new(root)",
-      } as KeyframeAnimationOptions,
-    );
-  }, [isDark, duration]);
+      document.documentElement.animate(
+        {
+          clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${maxRadius}px at ${x}px ${y}px)`],
+        },
+        {
+          duration,
+          easing: "ease-in-out",
+          pseudoElement: "::view-transition-new(root)",
+        } as KeyframeAnimationOptions,
+      );
+    } catch {
+      applyTheme();
+    }
+  }, [duration]);
 
   return (
     <button
