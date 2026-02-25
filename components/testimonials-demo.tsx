@@ -75,7 +75,7 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export default function TestimonialsDemo() {
   return (
-    <section className="px-4 py-20 md:px-8 md:py-28">
+    <section className="px-4 py-12 md:px-8 md:py-28">
       <div className="z-10 mx-auto w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
