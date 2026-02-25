@@ -48,7 +48,7 @@ export default function Home() {
 
         {/* Hero Content - Staggered Animation */}
         <div className="relative z-10 flex min-h-[100vh] items-center px-4 pb-8 pt-24 md:px-8 md:pt-28">
-          <div className="mx-auto w-full max-w-6xl">
+          <div className="mx-auto w-full max-w-6xl text-center md:text-left">
             <BlurFade delay={0.1} duration={1} blur="12px">
               <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#f2baa0] md:text-sm">
                 {serviceArea}
@@ -56,7 +56,7 @@ export default function Home() {
             </BlurFade>
 
             <BlurFade delay={0.3} duration={1.2} blur="12px">
-              <h1 className="mt-6 max-w-4xl text-[2.8rem] font-semibold leading-[0.95] tracking-tight text-neutral-50 md:text-[5rem] lg:text-[6rem]">
+              <h1 className="mx-auto mt-6 max-w-4xl text-[2.8rem] font-semibold leading-[0.95] tracking-tight text-neutral-50 md:mx-0 md:text-[5rem] lg:text-[6rem]">
                 Precision Masonry
                 <br />
                 <span className="text-neutral-200">& Chimney Restoration</span>
@@ -64,13 +64,13 @@ export default function Home() {
             </BlurFade>
 
             <BlurFade delay={0.5} duration={1} blur="12px">
-              <p className="mt-8 max-w-md text-base leading-relaxed text-neutral-200/90 md:mt-10 md:text-lg">
+              <p className="mx-auto mt-8 max-w-md text-base leading-relaxed text-neutral-200/90 md:mx-0 md:mt-10 md:text-lg">
                 Built for enduring strength. Architectural-grade craftsmanship for residential exteriors.
               </p>
             </BlurFade>
 
             <BlurFade delay={0.7} duration={0.8} blur="8px">
-              <div className="mt-10 flex flex-wrap items-center gap-4 md:mt-12">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:mt-12 md:justify-start">
                 <CtaButton href={phoneHref} label="Request Consultation" />
                 <CtaButton href="/contact" label="Start Your Project" variant="secondary" />
               </div>
