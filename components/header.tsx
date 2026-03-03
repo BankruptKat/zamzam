@@ -23,11 +23,10 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full px-4 pt-3 md:px-8">
       <div
-        className={`mx-auto flex w-full max-w-6xl items-center justify-between rounded-full px-4 py-2.5 md:px-6 ${
-          isOverlay
+        className={`mx-auto flex w-full max-w-6xl items-center justify-between rounded-full px-4 py-2.5 md:px-6 ${isOverlay
             ? "border border-white/15 bg-black/40 shadow-[0_12px_34px_rgba(0,0,0,0.35)] backdrop-blur-xl"
             : "border border-white/20 bg-black/50 shadow-[0_12px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl"
-        }`}
+          }`}
       >
         <Link href="/" className="text-sm font-semibold tracking-[0.03em] text-neutral-100 md:text-base">
           Zamzam Masonry
@@ -70,18 +69,17 @@ export default function Header() {
       {isOpen ? (
         <div id="mobile-nav" className="mx-auto mt-3 w-full max-w-6xl lg:hidden">
           <nav
-            className={`flex flex-col rounded-3xl px-4 py-4 ${
-              isOverlay
+            className={`flex flex-col rounded-3xl px-4 py-4 ${isOverlay
                 ? "border border-white/20 bg-black/45 backdrop-blur-xl"
                 : "border border-white/20 bg-black/40 backdrop-blur-xl"
-            }`}
+              }`}
             aria-label="Mobile Navigation"
           >
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-xl px-3 py-2 text-sm font-medium text-neutral-100/90 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
+                className="flex items-center min-h-[48px] rounded-xl px-4 py-3 text-[16px] font-medium text-neutral-100/90 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a]"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -89,7 +87,7 @@ export default function Header() {
             ))}
             <a
               href={phoneHref}
-              className="mt-3 rounded-full bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-3 py-3 text-center text-sm font-semibold text-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f8cdb5]"
+              className="mt-3 flex items-center justify-center min-h-[48px] rounded-full bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-4 py-3 text-center text-[16px] font-semibold text-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f8cdb5]"
             >
               Request Consultation
             </a>

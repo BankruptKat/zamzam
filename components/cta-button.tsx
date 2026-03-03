@@ -19,7 +19,7 @@ export default function CtaButton({
   return (
     <Link
       href={href}
-      className={`inline-flex min-h-11 items-center justify-center rounded-full border px-5 py-2.5 text-sm font-medium tracking-wide transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 ${classes}`}
+      className={`inline-flex min-h-[48px] items-center justify-center rounded-full border px-6 py-3 text-[15px] font-medium tracking-wide transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 md:min-h-11 md:px-5 md:py-2.5 md:text-sm ${classes}`}
     >
       {label}
     </Link>

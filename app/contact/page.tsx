@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="px-4 pb-16 pt-28 md:px-8 md:pb-24 md:pt-32">
+    <section className="px-4 pb-16 pt-24 md:px-8 md:pb-24 md:pt-32">
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
         <SectionReveal className="mb-12 text-center md:mb-16">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#b96849] dark:text-[#f4c3ad]/70">Begin Your Project</p>
           <h1 className="mt-4 text-4xl font-semibold text-slate-900 dark:text-white md:text-6xl">Start a Conversation</h1>
-          <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-slate-500 dark:text-white/55">
+          <p className="mx-auto mt-4 max-w-lg text-[17px] leading-[1.65] text-slate-500 dark:text-white/55 md:text-lg">
             Limited project availability. Schedule your consultation to discuss your requirements.
           </p>
         </SectionReveal>

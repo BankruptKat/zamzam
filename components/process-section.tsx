@@ -44,13 +44,13 @@ export default function ProcessSection() {
           <h2 className="mt-4 text-center text-3xl font-semibold text-slate-900 dark:text-white md:text-5xl">
             How We Work
           </h2>
-          <p className="mt-3 max-w-2xl text-center text-base leading-7 text-slate-500 dark:text-white/55 md:text-lg">
+          <p className="mt-3 max-w-2xl text-center text-[17px] leading-[1.65] text-slate-500 dark:text-white/55 md:text-lg">
             A clear architectural workflow from first site review to final finish.
           </p>
         </motion.div>
 
         <div className="relative mx-auto max-w-5xl">
-          <div className="pointer-events-none absolute bottom-0 left-6 top-0 w-[2px] bg-gradient-to-b from-slate-400/0 via-slate-400/95 to-slate-400/0 dark:from-white/0 dark:via-white/30 dark:to-white/0 md:left-1/2 md:-translate-x-1/2" />
+          <div className="pointer-events-none absolute bottom-0 left-5 top-0 w-[2px] bg-gradient-to-b from-slate-400/0 via-slate-400/95 to-slate-400/0 dark:from-white/0 dark:via-white/30 dark:to-white/0 md:left-1/2 md:-translate-x-1/2" />
 
           <div className="space-y-8 md:space-y-10">
             {steps.map((step, index) => {
@@ -63,11 +63,11 @@ export default function ProcessSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: index * 0.05 }}
-                  className="grid grid-cols-[3rem_1fr] items-start gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-7"
+                  className="grid grid-cols-[2.5rem_1fr] items-start gap-5 sm:gap-6 md:grid-cols-[1fr_auto_1fr] md:gap-7"
                 >
                   <div className={isLeft ? "hidden md:block" : "hidden md:block md:order-3"} />
 
-                  <div className="relative z-10 col-start-1 row-start-1 flex h-12 w-12 items-center justify-center rounded-full border border-slate-300/90 bg-white shadow-[0_0_0_6px_rgba(148,163,184,0.18)] dark:border-white/20 dark:bg-[#0b111b]/90 dark:shadow-[0_0_0_6px_rgba(7,11,18,0.45)] md:col-start-2 md:h-14 md:w-14">
+                  <div className="relative z-10 col-start-1 row-start-1 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300/90 bg-white shadow-[0_0_0_6px_rgba(148,163,184,0.18)] dark:border-white/20 dark:bg-[#0b111b]/90 dark:shadow-[0_0_0_6px_rgba(7,11,18,0.45)] md:col-start-2 md:h-14 md:w-14">
                     <span className="text-xs font-semibold tracking-[0.14em] text-slate-600 dark:text-neutral-200">{step.number}</span>
                   </div>
 
@@ -80,7 +80,7 @@ export default function ProcessSection() {
                         Step {step.number}
                       </p>
                       <h3 className="mt-2 text-lg font-semibold text-slate-900 dark:text-white md:text-xl">{step.title}</h3>
-                      <p className="mt-2.5 text-sm leading-7 text-slate-500 dark:text-white/60 md:text-[15px]">{step.description}</p>
+                      <p className="mt-2.5 text-[15px] leading-relaxed text-slate-500 dark:text-white/60 md:text-[15px]">{step.description}</p>
                     </article>
                   </div>
                 </motion.div>

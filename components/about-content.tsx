@@ -24,10 +24,10 @@ export default function AboutContent() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#070b12]/60 via-[#070b12]/40 to-[#070b12]/95" />
                     <div className="absolute inset-0 vignette-overlay" />
-                    <div className="absolute inset-0 grain-overlay" />
+                    <div className="absolute inset-0 grain-overlay hidden md:block" />
                 </div>
 
-                <div className="relative z-10 flex min-h-[70vh] items-end px-4 pb-20 pt-32 md:px-8 md:pb-32">
+                <div className="relative z-10 flex min-h-[70vh] items-end px-4 pb-16 pt-32 md:px-8 md:pb-32">
                     <div className="mx-auto w-full max-w-6xl">
                         <BlurFade delay={0.1} duration={1} blur="12px">
                             <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#f2baa0]/90">
@@ -67,10 +67,10 @@ export default function AboutContent() {
                             viewport={{ once: true }}
                             className="space-y-6"
                         >
-                            <p className="text-base leading-relaxed text-slate-500 dark:text-white/60">
+                            <p className="text-[17px] leading-[1.65] text-slate-500 dark:text-white/60 md:text-lg">
                                 We believe exceptional masonry is invisible. It does not demand attention-it earns trust through decades of reliable performance. Every project begins with this understanding.
                             </p>
-                            <p className="text-base leading-relaxed text-slate-500 dark:text-white/60">
+                            <p className="text-[17px] leading-[1.65] text-slate-500 dark:text-white/60 md:text-lg">
                                 Our work serves homeowners who value enduring quality over short-term savings. Those who understand that true craftsmanship reveals itself slowly, through years of weathering storms and seasons.
                             </p>
                         </motion.div>
@@ -119,7 +119,7 @@ export default function AboutContent() {
                             >
                                 <p className="text-4xl font-bold text-slate-200 dark:text-white/10">{String(index + 1).padStart(2, "0")}</p>
                                 <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">{item.title}</h3>
-                                <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-white/50">{item.description}</p>
+                                <p className="mt-2 text-[15px] leading-relaxed text-slate-500 dark:text-white/50 md:text-sm">{item.description}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -133,7 +133,7 @@ export default function AboutContent() {
                     <h2 className="mt-4 text-3xl font-semibold text-slate-900 dark:text-white md:text-5xl">
                         Ready to Elevate Your Exterior?
                     </h2>
-                    <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-slate-500 dark:text-white/55">
+                    <p className="mx-auto mt-4 max-w-lg text-[17px] leading-[1.65] text-slate-500 dark:text-white/55 md:text-lg">
                         Limited project availability. Schedule your consultation to discuss your masonry requirements.
                     </p>
                     <div className="mt-10 flex flex-wrap justify-center gap-4">

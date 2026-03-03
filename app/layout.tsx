@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${headingFont.variable} ${bodyFont.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
+      <body className={`${headingFont.variable} ${bodyFont.variable} antialiased overflow-x-hidden`}>
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var stored=localStorage.getItem('theme');var prefers=window.matchMedia('(prefers-color-scheme: dark)').matches;var dark=stored?stored==='dark':prefers;document.documentElement.classList.toggle('dark',dark);}catch(e){document.documentElement.classList.add('dark')}})();`,
@@ -38,10 +38,14 @@ export default function RootLayout({
           Skip to main content
         </a>
         <div aria-hidden className="noise-overlay fixed inset-0 -z-10" />
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <MobileCallBar />
+        <div className="flex min-h-[100dvh] flex-col overflow-x-hidden w-full relative">
+          <Header />
+          <main id="main-content" className="flex-1 w-full relative">
+            {children}
+          </main>
+          <Footer />
+          <MobileCallBar />
+        </div>
       </body>
     </html>
   );

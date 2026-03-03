@@ -75,7 +75,7 @@ export default function ContactForm({ className }: ContactFormProps) {
           id="name"
           type="text"
           autoComplete="name"
-          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
+          className="w-full min-h-[48px] rounded-xl border border-slate-200/70 bg-white/85 px-4 py-3 text-[16px] text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] md:min-h-0 md:py-2.5 md:text-sm dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.name ? "true" : "false"}
           aria-describedby={errors.name ? "name-error" : undefined}
           {...register("name", { required: "Name is required." })}
@@ -96,7 +96,7 @@ export default function ContactForm({ className }: ContactFormProps) {
           type="tel"
           autoComplete="tel"
           inputMode="tel"
-          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
+          className="w-full min-h-[48px] rounded-xl border border-slate-200/70 bg-white/85 px-4 py-3 text-[16px] text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] md:min-h-0 md:py-2.5 md:text-sm dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.phone ? "true" : "false"}
           aria-describedby={errors.phone ? "phone-error" : undefined}
           {...register("phone", { required: "Phone is required." })}
@@ -117,7 +117,7 @@ export default function ContactForm({ className }: ContactFormProps) {
           type="email"
           autoComplete="email"
           spellCheck={false}
-          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
+          className="w-full min-h-[48px] rounded-xl border border-slate-200/70 bg-white/85 px-4 py-3 text-[16px] text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] md:min-h-0 md:py-2.5 md:text-sm dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.email ? "true" : "false"}
           aria-describedby={errors.email ? "email-error" : undefined}
           {...register("email", {
@@ -145,7 +145,7 @@ export default function ContactForm({ className }: ContactFormProps) {
         <select
           id="serviceNeeded"
           autoComplete="off"
-          className="w-full rounded-xl border border-slate-200/70 bg-white/95 px-3 py-2.5 text-sm text-[#0d1528] [color-scheme:light] focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-[#111722] dark:text-white dark:[color-scheme:dark]"
+          className="w-full min-h-[48px] rounded-xl border border-slate-200/70 bg-white/95 px-4 py-3 text-[16px] text-[#0d1528] [color-scheme:light] focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] md:min-h-0 md:py-2.5 md:text-sm dark:border-white/15 dark:bg-[#111722] dark:text-white dark:[color-scheme:dark]"
           aria-invalid={errors.serviceNeeded ? "true" : "false"}
           aria-describedby={errors.serviceNeeded ? "service-error" : undefined}
           {...register("serviceNeeded", { required: "Please choose a service." })}
@@ -175,7 +175,7 @@ export default function ContactForm({ className }: ContactFormProps) {
           id="message"
           rows={5}
           autoComplete="off"
-          className="w-full rounded-xl border border-slate-200/70 bg-white/85 px-3 py-2.5 text-sm text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
+          className="w-full min-h-[48px] rounded-xl border border-slate-200/70 bg-white/85 px-4 py-3 text-[16px] text-[#0d1528] placeholder:text-slate-500 focus:border-[#d27a5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d27a5a] md:min-h-0 md:py-2.5 md:text-sm dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/45"
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={errors.message ? "message-error" : undefined}
           {...register("message", {
@@ -196,7 +196,7 @@ export default function ContactForm({ className }: ContactFormProps) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-5 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(178,95,64,0.35)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_44px_rgba(178,95,64,0.44)] disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-gradient-to-r from-[#b25f40] to-[#d27a5a] px-5 text-[16px] font-semibold text-white shadow-[0_14px_34px_rgba(178,95,64,0.35)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_44px_rgba(178,95,64,0.44)] md:min-h-12 md:text-sm disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? "Sending..." : "Request a Quote"}
       </button>

@@ -44,13 +44,13 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 
 export default function ServicesPage() {
   return (
-    <section className="px-4 pb-14 pt-28 md:px-8 md:pb-24 md:pt-32">
+    <section className="px-4 pb-14 pt-24 md:px-8 md:pb-24 md:pt-32">
       <div className="mx-auto w-full max-w-6xl">
         {/* Header */}
         <SectionReveal className="mb-12 text-center md:mb-16">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#9b4f34] dark:text-[#f4c3ad]/70">What We Do</p>
           <h1 className="mt-4 text-4xl font-semibold text-slate-900 dark:text-white md:text-6xl">Service Overview</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-500 dark:text-white/55">
+          <p className="mx-auto mt-4 max-w-2xl text-[17px] leading-[1.65] text-slate-500 dark:text-white/55 md:text-lg">
             Every project begins with precise planning and ends with meticulous execution.
             Premium materials. Architectural standards.
           </p>
@@ -81,10 +81,10 @@ export default function ServicesPage() {
                     <h2 className="text-xl font-semibold text-slate-900 dark:text-white">{service.title}</h2>
                     <span className="text-3xl font-bold text-slate-200 dark:text-white/10">{String(index + 1).padStart(2, "0")}</span>
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-500 dark:text-white/55">{service.shortDescription}</p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-slate-500 dark:text-white/55 md:text-sm">{service.shortDescription}</p>
 
                   {/* Included items - minimal */}
-                  <ul className="mt-4 space-y-1 text-xs text-slate-400 dark:text-white/40">
+                  <ul className="mt-4 space-y-1 text-[13px] text-slate-400 dark:text-white/40 md:text-xs">
                     {service.included.slice(0, 3).map((item) => (
                       <li key={item} className="flex items-center gap-2">
                         <span className="h-px w-3 bg-slate-300 dark:bg-white/20" />
@@ -102,7 +102,7 @@ export default function ServicesPage() {
         <SectionReveal className="mt-16 text-center md:mt-20">
           <div className="glass-panel mx-auto max-w-2xl rounded-2xl p-8">
             <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">Ready to Begin?</h2>
-            <p className="mt-2 text-sm text-slate-500 dark:text-white/55">
+            <p className="mt-2 text-[15px] text-slate-500 dark:text-white/55 md:text-sm">
               Schedule your consultation to discuss your project requirements.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
