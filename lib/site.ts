@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const businessName = "Zamzam Masonry & Chimney Repairs Ltd";
 export const phoneDisplay = "250 514 6460";
 export const phoneHref = "tel:+12505146460";
-export const email = "zamzamyahya01@gmail.com";
+export const email = "zamzamchimeny@gmail.com";
 export const address = "1-2925 Bridge St";
 export const serviceArea = "Victoria & Vancouver Island";
 export const siteUrl = "https://www.zamzammasonry.ca";
